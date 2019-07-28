@@ -41,11 +41,12 @@ class PostController extends Controller
 
         ]);
 
-        $post = new Post;
-        $post->title = $request->title;
-        $post->content = $request->content;
+        $posts = new Post;
+        $posts->title = $request->title;
+        $posts->slug = str_slug($posts->title);
+        $posts->content = $request->content;
 
-        $post->save();
+        $posts->save();
 
         return back()->withInfo('Post baru berhasil di buat..!');
     }
@@ -58,7 +59,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+         $posts = Post::find($id);
+        return view('blog.show')->withPosts($posts);
     }
 
     /**

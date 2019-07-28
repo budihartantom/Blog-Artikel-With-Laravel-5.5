@@ -184,6 +184,7 @@ a:focus {
   position: relative;
 }
 .post-item .post-inner {
+  margin-top: 25px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 3px;
@@ -242,6 +243,7 @@ a:focus {
 
 .editdelete {
   padding-bottom: 25px;
+  margin-top: 25px;
 }
 
 .share {
